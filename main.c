@@ -3,6 +3,7 @@
 #include <stdlib.h>
 
 #include "calc.h"
+#include "decode.h"
 
 int main(
     int argc, // количество аргументов
@@ -96,6 +97,20 @@ int main(
         // calculate определен в "calc.h"
         answers[t] = calculate(left, argv[tripleStart + 1][0], right);
     }
+
+    // Это тот самый -k, значение которого последним аргументом передаем
+    int k = atoi(argv[argc - 1]); 
+
+    // Выделяем память под результирующий текст. Размер +1 потому что в конце строки добавляется '\0' для обозначения конца строки
+    char *text = malloc(triplesCount + 1); 
+    // Вызываем метод decode из "decode.h", для того чтоб превратить результаты вычисления в строку.
+    // decode записывает результаты вычисления в переданную ему переменную text
+    decode(answers, triplesCount, k, text);
+    // Вызываем print_results для печати результатов.
+    print_results(answers, triplesCount, text);
+
+    free(text);
+    free(answers);
 
     return 0;
 }
