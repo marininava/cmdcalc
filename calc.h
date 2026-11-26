@@ -7,5 +7,6 @@
 #include <stdbool.h>
 
 bool is_number(char *text);
+bool is_operator(char *text);
 
 #endif

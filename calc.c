@@ -21,3 +21,12 @@ bool is_number(char *text)
     }
     return true;
 }
+
+bool is_operator(char *text)
+{
+    if (strcmp(text, "+") == 0 || strcmp(text, "-") == 0 ||
+        strcmp(text, "*") == 0 || strcmp(text, "%") == 0) {
+        return true;
+    }
+    return false;
+}
