@@ -30,3 +30,17 @@ bool is_operator(char *text)
     }
     return false;
 }
+
+int calculate(int left, char op, int right)
+{
+    if (op == '+') {
+        return left + right;
+    }
+    if (op == '-') {
+        return left - right;
+    }
+    if (op == '*') {
+        return left * right;
+    }
+    return left % right;
+}

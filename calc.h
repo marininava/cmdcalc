@@ -8,5 +8,6 @@
 
 bool is_number(char *text);
 bool is_operator(char *text);
+int calculate(int left, char op, int right);
 
 #endif

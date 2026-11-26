@@ -91,6 +91,10 @@ int main(
             free(answers);
             return 1;
         }
+
+        // Методом calculate вычисляем результат тройки, и по индексу итерации кладем его в набор с результатами для дальнейшего вывода.
+        // calculate определен в "calc.h"
+        answers[t] = calculate(left, argv[tripleStart + 1][0], right);
     }
 
     return 0;
